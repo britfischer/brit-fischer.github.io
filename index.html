@@ -3,6 +3,14 @@
 <head>
 <title>Weather Test</title>
 <script>
+
+
+
+
+
+
+
+
 const data = null;
 
 const xhr = new XMLHttpRequest();
@@ -14,7 +22,7 @@ xhr.addEventListener("readystatechange", function () {
 	}
 });
 
-xhr.open("GET", "https://community-open-weather-map.p.rapidapi.com/weather?q=cincinnati,OH,USA&units=imperial");
+xhr.open("GET", "https://community-open-weather-map.p.rapidapi.com/weather?zip=45227&units=imperial");
 xhr.setRequestHeader("x-rapidapi-key", "81e8315b72msh91ce76aa3fbe5cfp14fe17jsn5dfeb5c34132");
 xhr.setRequestHeader("x-rapidapi-host", "community-open-weather-map.p.rapidapi.com");
 xhr.withCredentials = false;
@@ -27,5 +35,7 @@ xhr.send(data);
   
 <body>
 Weather Assignment
+<br>
+Zip Code:<input type = "test" id = "zipcode"></inpput>
 </body>
 </html>
