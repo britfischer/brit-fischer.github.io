@@ -8,7 +8,7 @@
 
 function getWeather () {
 	
-	theZip = document.getElementById("zipcode").value;
+	theZip = document.getElementById('zipcode').value;
 
 const data = null;
 
@@ -19,12 +19,6 @@ xhr.addEventListener("readystatechange", function () {
 	if (this.readyState === this.DONE) {
 		console.log(this.responseText);
 		
-		const weatherObj = JSON.parse(this.responseText);
-		
-		console.log(weatherObj.main.temp);
-		
-		theHTML = document.getElementById("weatherdisplay")
-		theHTML.innerHTML = weatherObj.main.temp;
 		
 	}
 });
@@ -51,6 +45,6 @@ Check Weather:
 <br>
 <br>
 Zip Code:<input type = "test" id = "zipcode"></inpput>
-<input type="button" onclick="document.getElementById('zipcode').innerHTML" value="Get Weather">
+<input type="button" onclick="document.getElementById(zipcode'').innerHTML" value="Get Weather">
 </body>
 </html>
