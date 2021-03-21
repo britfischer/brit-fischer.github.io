@@ -5,7 +5,17 @@
 	<title>Weather</title>
 <script>
 
-function getWeather(theZip) {
+//run code when page loads
+
+
+
+//call out to weather API
+function getWeather() {
+
+	theZip = document.getElementById("zipcode").value
+	
+	
+
 	const data = null;
 
 	const xhr = new XMLHttpRequest();
@@ -14,10 +24,22 @@ function getWeather(theZip) {
 	xhr.addEventListener("readystatechange", function () {
 		if (this.readyState === this.DONE) {
 			console.log(this.responseText);
-		}
+			
+			const weatherObj = JSON.parse(this.responseText);
+			
+			console.log*(weatherObj);
+			
+			theHTML = document.getElementById("weatherdisplay")
+			
+			theHTML.innerHTML = "<p>" + weatherObj.name + "</p>"
+			theHTML.innerHTML = theHTML.innerHTML + "<h1>" + Math.round(weather.Obj.main.temp) + "</h1>"
+			theHTML.innerHTML = theHTML.innerHTML + "Conditions:" + weatherObj.weather[0].description;
+			
+			
+			}
 	});
 
-	xhr.open("GET", "https://community-open-weather-map.p.rapidapi.com/weather?zip=" + theZip + "&units=imperial");
+	xhr.open("GET", "https://community-open-weather-map.p.rapidapi.com/weather?zip= + theZip + &units=imperial");
 	xhr.setRequestHeader("x-rapidapi-key", "81e8315b72msh91ce76aa3fbe5cfp14fe17jsn5dfeb5c34132");
 	xhr.setRequestHeader("x-rapidapi-host", "community-open-weather-map.p.rapidapi.com");
 	xhr.withCredentials = false;
@@ -40,7 +62,7 @@ Zip Code:<input type = "test" placeholder= "Enter Zipcode" id = "zipcode"></inpu
 <input type="button" onmouseup="getWeather()" value="Get Weather">
 
 
-</div>
+<div id="weatherdisplay"></div>
 
 
 </body>
