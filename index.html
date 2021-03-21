@@ -6,9 +6,9 @@
 
 
 
-
-
-function getWeather (theZip) {
+function getWeather () {
+	
+	theZip = document.getElementById("zipcode").value;
 
 const data = null;
 
@@ -18,6 +18,14 @@ xhr.withCredentials = true;
 xhr.addEventListener("readystatechange", function () {
 	if (this.readyState === this.DONE) {
 		console.log(this.responseText);
+		
+		const weatherObj = JSON.parse(this.responseText);
+		
+		console.log(weatherObj.main.temp);
+		
+		theHTML = document.getElementById("weatherdisplay")
+		theHTML.innerHTML = weatherObj.main.temp;
+		
 	}
 });
 
@@ -36,7 +44,10 @@ xhr.send(data);
 </head>
   
   
+  
 <body onload="getWeather('45227')">
+<div id="zipcode"></div>
+
 Check Weather:
 <br>
 <br>
