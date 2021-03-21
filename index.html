@@ -5,22 +5,25 @@
 <title>Weather</title>
 <script>
 
-const data = null;
+function getWeather(theZip) {
+	const data = null;
 
-const xhr = new XMLHttpRequest();
-xhr.withCredentials = true;
+	const xhr = new XMLHttpRequest();
+	xhr.withCredentials = true;
 
-xhr.addEventListener("readystatechange", function () {
-	if (this.readyState === this.DONE) {
-		console.log(this.responseText);
-	}
-});
+	xhr.addEventListener("readystatechange", function () {
+		if (this.readyState === this.DONE) {
+			console.log(this.responseText);
+		}
+	});
 
-xhr.open("GET", "https://community-open-weather-map.p.rapidapi.com/weather?q=Cincinnati%2COH%2CUSA&lat=0&lon=0&callback=test&id=2172797&lang=null&units=%22imperial%22&mode=xml%2C%20html");
-xhr.setRequestHeader("x-rapidapi-key", "81e8315b72msh91ce76aa3fbe5cfp14fe17jsn5dfeb5c34132");
-xhr.setRequestHeader("x-rapidapi-host", "community-open-weather-map.p.rapidapi.com");
-xhr.withCredentials = false;
-xhr.send(data);
+	xhr.open("GET", "https://community-open-weather-map.p.rapidapi.com/weather?zip=" + theZip + "&units=imperial");
+	xhr.setRequestHeader("x-rapidapi-key", "81e8315b72msh91ce76aa3fbe5cfp14fe17jsn5dfeb5c34132");
+	xhr.setRequestHeader("x-rapidapi-host", "community-open-weather-map.p.rapidapi.com");
+	xhr.withCredentials = false;
+	xhr.send(data);
+
+}
 
 </script>
 
