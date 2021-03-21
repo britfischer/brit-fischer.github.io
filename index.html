@@ -39,7 +39,7 @@ function getWeather() {
 			}
 	});
 
-	xhr.open("GET", "https://community-open-weather-map.p.rapidapi.com/weather?zip= + theZip + &units=imperial");
+	xhr.open("GET", "https://community-open-weather-map.p.rapidapi.com/weather?zip=" + theZip + "&units=imperial");
 	xhr.setRequestHeader("x-rapidapi-key", "81e8315b72msh91ce76aa3fbe5cfp14fe17jsn5dfeb5c34132");
 	xhr.setRequestHeader("x-rapidapi-host", "community-open-weather-map.p.rapidapi.com");
 	xhr.withCredentials = false;
@@ -59,7 +59,7 @@ Check Weather:
 <br>
 <br>
 Zip Code:<input type = "test" placeholder= "Enter Zipcode" id = "zipcode"></input>
-<input type="button" onmouseup="getWeather(zipcode)" value="Get Weather">
+<input type="button" onmouseup="getWeather(21224)" value="Get Weather">
 
 
 <div id="weatherdisplay"></div>
