@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Weather</title>
+	//https://britfischer.github.io/
+	
+<script>
+
+
+//Below is geolocation api source: W3 School and bing custom map url
+//Level 1:User location and traffic
+
+function getLocation() {
+
+	x = document.getElementById("demo");
+
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else {
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+
+function showPosition(position) {
+  x.innerHTML = "<a href='https://bing.com/maps/default.aspx?lvl=15&trfc=1&cp=" + position.coords.latitude +"~"+ position.coords.longitude +" '>See the Map</a>"
+
+
+  
+  
+  
+  Latitude: " + position.coords.latitude +
+  "<br>Longitude: " + position.coords.longitude;
+}
+
+
+
+//Level 2: Directions to Elm St Deli
+
+
+
+//Level 3: Weather based on user location
+
+
+
+//Below this line is old
+/*
+
+function getWeather() {
+
+	theZip = document.getElementById("zipcode").value
+	
+	
+
+	const data = null;
+
+	const xhr = new XMLHttpRequest();
+	xhr.withCredentials = true;
+
+	xhr.addEventListener("readystatechange", function () {
+		if (this.readyState === this.DONE) {
+			console.log(this.responseText);
+			
+			const weatherObj = JSON.parse(this.responseText);
+			
+			console.log*(weatherObj);
+			
+			theHTML = document.getElementById("weatherdisplay")
+			
+			theHTML.innerHTML = "<p>" + weatherObj.name + "</p>"
+			theHTML.innerHTML = theHTML.innerHTML + "<h1>" + weatherObj.main.temp + "</h1>"
+			theHTML.innerHTML = theHTML.innerHTML + "Conditions:" + weatherObj.weather[0].description;
+			
+			
+			}
+	});
+
+	xhr.open("GET", "https://community-open-weather-map.p.rapidapi.com/weather?zip=" + theZip + "&units=imperial");
+	xhr.setRequestHeader("x-rapidapi-key", "81e8315b72msh91ce76aa3fbe5cfp14fe17jsn5dfeb5c34132");
+	xhr.setRequestHeader("x-rapidapi-host", "community-open-weather-map.p.rapidapi.com");
+	xhr.withCredentials = false;
+	xhr.send(data);
+
+}
+*/
+
+</script>
+
+</head> 
+<body onload="getlocation()">
+<div id="demo"></div>
+</body>
+</html>
