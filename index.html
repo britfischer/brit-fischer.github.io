@@ -9,6 +9,8 @@
 
 // Air Quality/Pollen API
 
+function getPollen(theZip) {
+	
 const data = null;
 
 const xhr = new XMLHttpRequest();
@@ -20,7 +22,7 @@ xhr.addEventListener("readystatechange", function () {
 	}
 });
 
-xhr.open("GET", "https://air-quality.p.rapidapi.com/current/airquality?postal_code=45227");
+xhr.open("GET", "https://air-quality.p.rapidapi.com/current/airquality?postal_code=" + theZip + "&units=imperial");
 xhr.setRequestHeader("x-rapidapi-key", "81e8315b72msh91ce76aa3fbe5cfp14fe17jsn5dfeb5c34132");
 xhr.setRequestHeader("x-rapidapi-host", "air-quality.p.rapidapi.com");
 xhr.withCredentials = false;
@@ -59,12 +61,12 @@ function myFunction(arr) {
 */
 </script>
 </head>
-<body>
+<body onload="getPollen()">
 <div id="pollenAlert"></div>
-<h1>Check Pollen Allergy:</h1>
+<h1>Chance of Pollen Allergy:</h1>
 <br>
 <br>
 Zip Code:<input type = "test" placeholder= "Enter Zipcode" id = "zipcode"></input>
-<input type="button" onmouseup="getAllergy(21224)" value="Get Allergy">
+<input type="button" onmouseup="getPollen()" value="Get Allergy Update">
 </body>
 </html>
