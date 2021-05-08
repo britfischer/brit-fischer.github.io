@@ -6,7 +6,8 @@
 <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
 <meta content="utf-8" http-equiv="encoding">
 <script>
-//API Ambee Pollen Data
+
+// Air Quality/Pollen API
 
 const data = null;
 
@@ -19,7 +20,7 @@ xhr.addEventListener("readystatechange", function () {
 	}
 });
 
-xhr.open("GET", "https://air-quality.p.rapidapi.com/current/airquality?lat=40.71427&lon=-73.00597");
+xhr.open("GET", "https://air-quality.p.rapidapi.com/current/airquality?zip=45227");
 xhr.setRequestHeader("x-rapidapi-key", "81e8315b72msh91ce76aa3fbe5cfp14fe17jsn5dfeb5c34132");
 xhr.setRequestHeader("x-rapidapi-host", "air-quality.p.rapidapi.com");
 xhr.withCredentials = false;
