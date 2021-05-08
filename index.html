@@ -11,7 +11,9 @@
 
 // Call out to Air Quality/Pollen API
 
-function getPollen(theZip) {
+function getPollen() {
+	
+	theZip = document.getElementById("zipcode");
 	
 	const data = null;
 
@@ -68,10 +70,15 @@ function myFunction(arr) {
 </head>
 <body>
 <div id="pollenAlert"></div>
+
+document.getElementById("zipcode");
+
 <h1>Chance of Pollen Allergy:</h1>
 
 <br>
 Zip Code:<input type = "text" placeholder= "Enter Zipcode" id = "zipcode"></input>
 <input type = "button" onmouseup= "getPollen()" value= "Get Allergy Update">
+
+
 </body>
 </html>
