@@ -40,8 +40,9 @@ function getPollen() {
 			theHTML.innerHTML = theHTML.innerHTML + "<h4> Tree:" + pollenObj.data[0].pollen_level_tree + "</h4>";
 			theHTML.innerHTML = theHTML.innerHTML + "<h4> Weed:" + pollenObj.data[0].pollen_level_weed + "</h4>";
 			theHTML.innerHTML = theHTML.innerHTML + "<h4> Mold:" + pollenObj.data[0].mold_level+ "</h4>";
+			}
 */
-		}
+		
 	});
 
 	xhr.open("GET", "https://air-quality.p.rapidapi.com/current/airquality?postal_code=" + theZip + "");
@@ -69,8 +70,7 @@ function myFunction(myArr) {
 		out += "<h4>Moderate</h4>"} 
 		if else (arr[i].pollen_level_grass > 2){
 		out += "<h4>Low</h4>"
-		} 
-		
+		} 	
 		
 	}
 	
