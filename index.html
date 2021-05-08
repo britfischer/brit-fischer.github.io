@@ -28,6 +28,13 @@ function getPollen() {
 			
 			console.log(pollenObj.data[0].mold_level);
 			
+			theHTML = document.getElementById("pollenAlert")
+			
+			theHTML.innerHTML = "<h2>" + pollenObj.city_name.state_name + "</h2>"
+			theHTML.innerHTML = theHTML.innerHTML + "<h3> Grass:" + pollenObj.data[0].pollen_level_grass + "</h3>";
+			theHTML.innerHTML = theHTML.innerHTML + "<h3> Tree:" + pollenObj.data[0].pollen_level_tree + "</h3>";
+			theHTML.innerHTML = theHTML.innerHTML + "<h3> Weed:" + pollenObj.data[0].pollen_level_weed + "</h3>";
+			theHTML.innerHTML = theHTML.innerHTML + "<h3> Mold:" + pollenObj.data[0].mold_level+ "</h3>";
 
 		}
 	});
