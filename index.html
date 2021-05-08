@@ -23,11 +23,11 @@ function getPollen() {
 	xhr.addEventListener("readystatechange", function () {
 		if (this.readyState === this.DONE) {
 			console.log(this.responseText);	
-			
-			var mold = pollenObj.data[0].pollen_level_grass;
-				if (mold = 5) {
- 				 document.getElementById("demo").innerHTML = "Very High";
-}
+			const pollenObj = JSON.parse(this.responseText);
+			 var myArr = JSON.parse(xmlhttp.responseText);
+			 myFunction(myArr);
+			 
+	}
 /*
 		const pollenObj = JSON.parse(this.responseText);
 			
@@ -50,6 +50,31 @@ function getPollen() {
 	xhr.withCredentials = false;
 
 	xhr.send(data);
+
+function myFunction(myArr) {
+	var out = "<h1>Outdoor Allergy Alert</h1>";
+	var i;
+	for(i = 0; i < arr.lenght; i++) {
+		
+		out += arr[i].pollen_level_grass
+		out += arr[i].pollen_level_tree
+		out += arr[i].pollen_level_weed
+		out += arr[i].mold_level 
+		
+		if (arr[i].pollen_level_grass = 4){
+		out += "<h4>Very High</h4>"} 
+		if else (arr[i].pollen_level_grass = 3){
+		out += "<h4>High</h4>"} 
+		if else (arr[i].pollen_level_grass = 2){
+		out += "<h4>Moderate</h4>"} 
+		if else (arr[i].pollen_level_grass > 2){
+		out += "<h4>Low</h4>"
+		} 
+		
+		
+	}
+	
+    document.getElementById("pollenAlert").innerHTML = out;
 
 }
 
