@@ -22,8 +22,13 @@ function getPollen() {
 
 	xhr.addEventListener("readystatechange", function () {
 		if (this.readyState === this.DONE) {
-			console.log(this.responseText);
+			console.log(this.responseText);	
 			
+			var mold = pollenObj.data[0].pollen_level_grass;
+				if (mold = 5) {
+ 				 document.getElementById("demo").innerHTML = "Very High";
+}
+/*
 		const pollenObj = JSON.parse(this.responseText);
 			
 			console.log(pollenObj.data[0].mold_level);
@@ -35,7 +40,7 @@ function getPollen() {
 			theHTML.innerHTML = theHTML.innerHTML + "<h4> Tree:" + pollenObj.data[0].pollen_level_tree + "</h4>";
 			theHTML.innerHTML = theHTML.innerHTML + "<h4> Weed:" + pollenObj.data[0].pollen_level_weed + "</h4>";
 			theHTML.innerHTML = theHTML.innerHTML + "<h4> Mold:" + pollenObj.data[0].mold_level+ "</h4>";
-
+*/
 		}
 	});
 
