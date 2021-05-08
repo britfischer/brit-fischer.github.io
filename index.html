@@ -9,22 +9,20 @@
 //API Ambee Pollen Data
 
 const data = null;
-
 const xhr = new XMLHttpRequest();
 xhr.withCredentials = true;
-
 xhr.addEventListener("readystatechange", function () {
 	if (this.readyState === this.DONE) {
 		console.log(this.responseText);
 	}
 });
-
-xhr.open("GET", "https://ambee-pollen-data1.p.rapidapi.com/latest/pollen/by-postal-code?postalCode=45227");
-xhr.setRequestHeader("x-rapidapi-key", "81e8315b72msh91ce76aa3fbe5cfp14fe17jsn5dfeb5c34132");
-xhr.setRequestHeader("x-rapidapi-host", "ambee-pollen-data1.p.rapidapi.com");
+xhr.open("GET", "https://api.ambeedata.com/latest/pollen/by-place?place=Bengaluru");
+xhr.setRequestHeader("x-api-key", "81e8315b72msh91ce76aa3fbe5cfp14fe17jsn5dfeb5c34132");
+xhr.setRequestHeader("Content-type", "application/json");
 xhr.withCredentials = false;
+
 xhr.send(data);
-	
+
 	
 
 /*
