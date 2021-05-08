@@ -22,13 +22,8 @@ function getPollen() {
 
 	xhr.addEventListener("readystatechange", function () {
 		if (this.readyState === this.DONE) {
-			console.log(this.responseText);	
-			const pollenObj = JSON.parse(this.responseText);
-			 var myArr = JSON.parse(xmlhttp.responseText);
-			 myFunction(myArr);
-			 
-	}
-/*
+			console.log(this.responseText);
+			
 		const pollenObj = JSON.parse(this.responseText);
 			
 			console.log(pollenObj.data[0].mold_level);
@@ -36,13 +31,14 @@ function getPollen() {
 			theHTML = document.getElementById("pollenAlert")
 			
 			theHTML.innerHTML = "<h2>" + pollenObj.city_name + "</h2>"
+			
+			if (pollenObj.data[0].pollen_level_grass += 5 )
 			theHTML.innerHTML = theHTML.innerHTML + "<h4> Grass:" + pollenObj.data[0].pollen_level_grass + "</h4>";
 			theHTML.innerHTML = theHTML.innerHTML + "<h4> Tree:" + pollenObj.data[0].pollen_level_tree + "</h4>";
 			theHTML.innerHTML = theHTML.innerHTML + "<h4> Weed:" + pollenObj.data[0].pollen_level_weed + "</h4>";
 			theHTML.innerHTML = theHTML.innerHTML + "<h4> Mold:" + pollenObj.data[0].mold_level+ "</h4>";
-			}
-*/
-		
+
+		}
 	});
 
 	xhr.open("GET", "https://air-quality.p.rapidapi.com/current/airquality?postal_code=" + theZip + "");
@@ -51,30 +47,6 @@ function getPollen() {
 	xhr.withCredentials = false;
 
 	xhr.send(data);
-
-function myFunction(myArr) {
-	var out = "<h1>Outdoor Allergy Alert</h1>";
-	var i;
-	for(i = 0; i < arr.lenght; i++) {
-		
-		out += arr[i].pollen_level_grass
-		out += arr[i].pollen_level_tree
-		out += arr[i].pollen_level_weed
-		out += arr[i].mold_level 
-		
-		if (arr[i].pollen_level_grass = 4){
-		out += "<h4>Very High</h4>"} 
-		if else (arr[i].pollen_level_grass = 3){
-		out += "<h4>High</h4>"} 
-		if else (arr[i].pollen_level_grass = 2){
-		out += "<h4>Moderate</h4>"} 
-		if else (arr[i].pollen_level_grass > 2){
-		out += "<h4>Low</h4>"
-		} 	
-		
-	}
-	
-    document.getElementById("pollenAlert").innerHTML = out;
 
 }
 
