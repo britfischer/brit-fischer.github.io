@@ -6,29 +6,34 @@
 <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
 <meta content="utf-8" http-equiv="encoding">
 <script>
+//run code when page loads
 
-// Air Quality/Pollen API
 
-function getPollen() {
+// Call out to Air Quality/Pollen API
+
+function getPollen(theZip) {
 	
-const data = null;
+	const data = null;
 
-const xhr = new XMLHttpRequest();
-xhr.withCredentials = true;
+	const xhr = new XMLHttpRequest();
+	xhr.withCredentials = true;
 
-xhr.addEventListener("readystatechange", function () {
-	if (this.readyState === this.DONE) {
-		console.log(this.responseText);
-	}
-});
+	xhr.addEventListener("readystatechange", function () {
+		if (this.readyState === this.DONE) {
+			console.log(this.responseText);
+		}
+	});
 
-xhr.open("GET", "https://air-quality.p.rapidapi.com/current/airquality?postal_code=" + theZip + "&units=imperial");
-xhr.setRequestHeader("x-rapidapi-key", "81e8315b72msh91ce76aa3fbe5cfp14fe17jsn5dfeb5c34132");
-xhr.setRequestHeader("x-rapidapi-host", "air-quality.p.rapidapi.com");
-xhr.withCredentials = false;
+	xhr.open("GET", "https://air-quality.p.rapidapi.com/current/airquality?postal_code=" + theZip + "&units=imperial");
+	xhr.setRequestHeader("x-rapidapi-key", "81e8315b72msh91ce76aa3fbe5cfp14fe17jsn5dfeb5c34132");
+	xhr.setRequestHeader("x-rapidapi-host", "air-quality.p.rapidapi.com");
+	xhr.withCredentials = false;
 
-xhr.send(data);
-	
+	xhr.send(data);
+
+}
+
+//update web page with data	
 
 /*
 // For Loop to display results based on pollen level
@@ -61,12 +66,12 @@ function myFunction(arr) {
 */
 </script>
 </head>
-<body onload="getPollen();">
+<body>
 <div id="pollenAlert"></div>
 <h1>Chance of Pollen Allergy:</h1>
+
 <br>
-<br>
-Zip Code:<input type = "test" placeholder= "Enter Zipcode" id = "zipcode"></input>
-<input type="button" onmouseup="getPollen()" value="Get Allergy Update">
+Zip Code:<input type = "text" placeholder= "Enter Zipcode" id = "zipcode"></input>
+<input type ="button" onmouseup="getPollen()" value="Get Allergy Update">
 </body>
 </html>
