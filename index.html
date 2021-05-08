@@ -26,7 +26,7 @@ function getPollen() {
 			
 		const pollenObj = JSON.parse(this.responseText);
 			
-			console.log(pollenObj.mold_level);
+			console.log(pollenObj.data[0].mold_level);
 			
 
 		}
@@ -76,13 +76,9 @@ function myFunction(arr) {
 </head>
 <body>
 <div id="pollenAlert"></div>
-
 <h1>Chance of Pollen Allergy:</h1>
-
 <br>
 Zip Code:<input type = "text" placeholder= "Enter Zipcode" id = "zipcode"></input>
 <input type = "button" onmouseup= "getPollen()" value= "Get Allergy Update">
-
-
 </body>
 </html>
