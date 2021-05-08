@@ -24,7 +24,7 @@ function getPollen(theZip) {
 		}
 	});
 
-	xhr.open("GET", "https://air-quality.p.rapidapi.com/current/airquality?postal_code=" + theZip + "&units=imperial");
+	xhr.open("GET", "https://air-quality.p.rapidapi.com/current/airquality?postal_code=" + theZip + "");
 	xhr.setRequestHeader("x-rapidapi-key", "81e8315b72msh91ce76aa3fbe5cfp14fe17jsn5dfeb5c34132");
 	xhr.setRequestHeader("x-rapidapi-host", "air-quality.p.rapidapi.com");
 	xhr.withCredentials = false;
@@ -72,6 +72,6 @@ function myFunction(arr) {
 
 <br>
 Zip Code:<input type = "text" placeholder= "Enter Zipcode" id = "zipcode"></input>
-<input type ="button" onmouseup="getPollen()" value="Get Allergy Update">
+<input type = "button" onmouseup= "getPollen(21224)" value= "Get Allergy Update">
 </body>
 </html>
