@@ -23,6 +23,12 @@ function getPollen() {
 	xhr.addEventListener("readystatechange", function () {
 		if (this.readyState === this.DONE) {
 			console.log(this.responseText);
+			
+		const pollenObj = JSON.parse(this.responseText);
+			
+			console.log*(pollenObj);
+			
+
 		}
 	});
 
