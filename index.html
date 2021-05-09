@@ -24,11 +24,12 @@ Zip Code:<input type = "text" placeholder= "Enter Zipcode" id = "zipcode"></inpu
 // Citation : https://stackoverflow.com/questions/6665997/switch-statement-for-greater-than-less-than
 function classify(pollen_type) { 
 switch (true) {
-  case (0 <= pollen_type &&  pollen_type < 2): out = "low" break;
-  case (2 == pollen_type): out = "moderate" break;
-  case (3 == pollen_type): out = "high" break;
-  case (4 <= pollen_type): out = "very high" break;
+  case (2 >  pollen_type): out = "low"; break;
+  case (2 == pollen_type): out = "moderate"; break;
+  case (3 == pollen_type): out = "high"; break;
+  case (4 <= pollen_type): out = "very high"; break;
 }
+return out;
 }
 
 function getPollen() {
