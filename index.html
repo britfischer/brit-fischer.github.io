@@ -54,8 +54,12 @@ function myFunction(pollenObj) {
 		x += pollenObj.data[0].pollen_level_grass
 		x += pollenObj.data[0].pollen_level_tree
 		x += pollenObj.data[0].pollen_level_weed
-		x += pollenObj.data[0].mold_level 
+		x += pollenObj.data[0].mold_level
+		
+		 
 	}
+	    document.getElementById("pollenAlert").innerHTML = out;
+}
 }
 
 </script>
