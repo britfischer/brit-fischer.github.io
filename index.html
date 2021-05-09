@@ -9,27 +9,31 @@
 <title>Pollen Allergy Alert</title>
 <div id="pollenAlert"></div>
 
-<h1>Chance of Pollen Allergy:</h1>
+<h1>Risk Levels of Outdoor Allergens:</h1>
 <br>
 Zip Code:<input type = "text" placeholder= "Enter Zipcode" id = "zipcode"></input>
 <input type = "button" onmouseup= "getPollen()" value= "Get Allergy Update">
 
 </head>
+
 <body>
 
 <script>
 
 // Call out to Air Quality/Pollen API
-
 // Citation : https://stackoverflow.com/questions/6665997/switch-statement-for-greater-than-less-than
 function classify(pollen_type) { 
-switch (true) {
-  case (2 >  pollen_type): out = " Low"; break;
-  case (2 == pollen_type): out = " Moderate"; break;
-  case (3 == pollen_type): out = " High"; break;
-  case (4 <= pollen_type): out = " Very high"; break;
-}
-return out;
+	switch (true) {
+  	case (2 >  pollen_type): 
+  		out = " Low"; break;
+  	case (2 == pollen_type): 
+  		out = " Moderate"; break;
+  	case (3 == pollen_type): 
+  		out = " High"; break;
+  	case (4 <= pollen_type): 
+  		out = " Very high"; break;
+	}
+	return out;
 }
 
 function getPollen() {
@@ -47,10 +51,7 @@ function getPollen() {
 			
 		const pollenObj = JSON.parse(this.responseText);
 			
-			console.log(pollenObj.data[0].mold_level);
-			
 			theHTML = document.getElementById("pollenAlert")
-			
 			theHTML.innerHTML = "<h2>" + pollenObj.city_name + "</h2>"
 			theHTML.innerHTML = theHTML.innerHTML + "<h4> Grass:" + classify(pollenObj.data[0].pollen_level_grass) + "</h4>";
 			theHTML.innerHTML = theHTML.innerHTML + "<h4> Tree:" + classify(pollenObj.data[0].pollen_level_tree) + "</h4>";
@@ -68,8 +69,6 @@ function getPollen() {
 	xhr.send(data);
 
 }
-
-
 
 </script>
 
