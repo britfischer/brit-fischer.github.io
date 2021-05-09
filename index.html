@@ -21,6 +21,16 @@ Zip Code:<input type = "text" placeholder= "Enter Zipcode" id = "zipcode"></inpu
 
 // Call out to Air Quality/Pollen API
 
+// Citation : https://stackoverflow.com/questions/6665997/switch-statement-for-greater-than-less-than
+function classify(pollen_type) { 
+switch (true) {
+  case (0 <= pollen_type &&  pollen_type < 2): out = "low" break;
+  case (2 == pollen_type): out = "moderate" break;
+  case (3 == pollen_type): out = "high" break;
+  case (4 <= pollen_type): out = "very high" break;
+}
+}
+
 function getPollen() {
 	
 	theZip = document.getElementById("zipcode").value;
@@ -43,7 +53,11 @@ function getPollen() {
 			theHTML.innerHTML = "<h2>" + pollenObj.city_name + "</h2>"
 			
 			
-			theHTML.innerHTML = theHTML.innerHTML + "<h4> Grass:" + pollenObj.data[0].pollen_level_grass + "</h4>";
+			theHTML.innerHTML = theHTML.innerHTML + "<h4> Grass:" + 
+			 classify(pollenObj.data[0].pollen_level_grass) + 
+			
+			
+			"</h4>";
 			theHTML.innerHTML = theHTML.innerHTML + "<h4> Tree:" + pollenObj.data[0].pollen_level_tree + "</h4>";
 			theHTML.innerHTML = theHTML.innerHTML + "<h4> Weed:" + pollenObj.data[0].pollen_level_weed + "</h4>";
 			theHTML.innerHTML = theHTML.innerHTML + "<h4> Mold:" + pollenObj.data[0].mold_level+ "</h4>";
