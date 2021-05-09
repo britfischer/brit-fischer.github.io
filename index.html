@@ -27,19 +27,19 @@ function getPollen() {
 		const pollenObj = JSON.parse(this.responseText);
 		switch (pollenObj) {
 			case 0:
-   				pollenObj = "Low";
+   				return "Low";
     			break;
   			case 1:
-    			pollenObj = "Low";
+    			return "Low";
     			break;
   			case 2:
-     			pollenObj = "Moderate";
+     			return "Moderate";
    				break;
  			case 3:
-    			pollenObj = "High";
+    			return "High";
    				break;
   			case 4:
- 	  			pollenObj = "Very High";
+ 	  			return "Very High";
 				break;
 			}
 			
