@@ -36,23 +36,22 @@ function getPollen() {
 			theHTML.innerHTML = theHTML.innerHTML + "<h4> Weed:" + pollenObj.data[0].pollen_level_weed + "</h4>";
 			theHTML.innerHTML = theHTML.innerHTML + "<h4> Mold:" + pollenObj.data[0].mold_level+ "</h4>";
 
-		var = pollenObj.data[0].pollen_level_grass;
-		switch (pollenObj.data[0].pollen_level_grass) {
-		
+		var grass = pollenObj.data[0].pollen_level_grass;
+		switch (pollenObj) {
 			case 0:
-   				pollenObj.data[0].pollen_level_grass = "Low";
+   				grass = "Low";
     			break;
   			case 1:
-    			pollenObj.data[0].pollen_level_grass = "Low";
+    			grass = "Low";
     			break;
   			case 2:
-     			pollenObj.data[0].pollen_level_grass = "Moderate";
+     			grass = "Moderate";
    				break;
  			case 3:
-    			pollenObj.data[0].pollen_level_grass = "High";
+    			grass = "High";
    				break;
   			case 4:
- 	  			pollenObj.data[0].pollen_level_grass = "Very High";
+ 	  			grass = "Very High";
 		
 		}
 		
