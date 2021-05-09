@@ -11,7 +11,7 @@
 
 // Call out to Air Quality/Pollen API
 
-function getPollen() {
+window.onload = function getPollen() {
 	
 	theZip = document.getElementById("zipcode").value;
 	
@@ -39,7 +39,7 @@ function getPollen() {
 }
 
 function myFunction(myArr) {
-	var out = "<h1>Outdoor Allergy Alert</h1>";
+	var out = "";
 	var i;
 	for( let i = 0; i < 6; i++) {
 		
