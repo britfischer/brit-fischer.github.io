@@ -41,16 +41,13 @@ function getPollen() {
 function myFunction(arr) {
 	var out = "<h1>Outdoor Allergy Alert</h1>";
 	var i;
-	for(i = 0; i < arr.lenght; i++) {
+	for(i = 0; i < arr.length; i++) {
 		
 		out += arr[i].mold_level
 		out += arr[i].pollen_level_tree		
 		out += arr[i].pollen_level_grass
 		out += arr[i].pollen_level_weed
-		
-		if (out += arr[i].mold_level = 5) {
-		out += "Very High"
-		}	
+			
 	}
 	
     document.getElementById("pollenAlert").innerHTML = out;
