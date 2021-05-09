@@ -33,8 +33,18 @@ function getPollen() {
 	xhr.addEventListener("readystatechange", function () {
 		if (this.readyState === this.DONE) {
 			console.log(this.responseText);
-		var pollenObj = JSON.parse(this.responseText);
-        myFunction(pollenObj);
+			
+		const pollenObj = JSON.parse(this.responseText);
+			
+			console.log(pollenObj.data[0].mold_level);
+			
+			theHTML = document.getElementById("pollenAlert")
+			
+			theHTML.innerHTML = "<h2>" + pollenObj.city_name + "</h2>"
+			theHTML.innerHTML = theHTML.innerHTML + "<h4> Grass:" + pollenObj.data[0].pollen_level_grass + "</h4>";
+			theHTML.innerHTML = theHTML.innerHTML + "<h4> Tree:" + pollenObj.data[0].pollen_level_tree + "</h4>";
+			theHTML.innerHTML = theHTML.innerHTML + "<h4> Weed:" + pollenObj.data[0].pollen_level_weed + "</h4>";
+			theHTML.innerHTML = theHTML.innerHTML + "<h4> Mold:" + pollenObj.data[0].mold_level+ "</h4>";
 
 		}
 	});
@@ -46,20 +56,6 @@ function getPollen() {
 
 	xhr.send(data);
 
-function myFunction(pollenObj) {
-	var x = "<h3>Allergy</h3>";
-	var i;
-	for(i = 0; i < 6; i++) {
-		
-		x += pollenObj.data[0].pollen_level_grass
-		x += pollenObj.data[0].pollen_level_tree
-		x += pollenObj.data[0].pollen_level_weed
-		x += pollenObj.data[0].mold_level
-		
-		 
-	}
-	    document.getElementById("pollenAlert").innerHTML = x;
-}
 }
 
 </script>
